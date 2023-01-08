@@ -22,7 +22,7 @@ const options = {
   },
 };
 
-let dates = flatpickr(datetime, options);
+let dates = new flatpickr(datetime, options);
 
 function clickBtn() {
     setInterval(() => {
