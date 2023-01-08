@@ -22,7 +22,7 @@ const options = {
   },
 };
 
-let dates = new flatpickr(datetime, options);
+let dates = flatpickr(datetime, options);
 
 function clickBtn() {
     setInterval(() => {
@@ -37,7 +37,7 @@ function clickBtn() {
     
 }
 
-addLeadingZero = value => value.toString().padStart(2, 0)
+const addLeadingZero = value => value.toString().padStart(2, 0)
 
 
 
