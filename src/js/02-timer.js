@@ -16,7 +16,7 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  minDate: 'today',
+  // minDate: 'today',
   onClose(selectedDates) {
       startBtn.addEventListener('click', clickBtn);
   },
