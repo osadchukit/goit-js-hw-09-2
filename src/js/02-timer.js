@@ -1,6 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-
+import Notiflix from 'notiflix';
 
 
 const datetime = document.querySelector('#datetime-picker');
@@ -9,7 +9,7 @@ const daysRef = document.querySelector('[data-days]');
 const hoursRef = document.querySelector('[data-hours]');
 const minutesRef = document.querySelector('[data-minutes]');
 const secondsRef = document.querySelector('[data-seconds]');
-
+startBtn.disabled = true
 
 const options = {
   enableTime: true,
@@ -18,10 +18,13 @@ const options = {
   minuteIncrement: 1,
   // minDate: 'today',
   onClose(selectedDates) {
-      startBtn.addEventListener('click', clickBtn);
+
+    if (selectedDates[0] < new Date()) {
+      Notiflix.Notify.failure('Qui timide rogat docet negare');
+    } else startBtn.disabled = false;
   },
 };
-
+startBtn.addEventListener('click', clickBtn);
 let dates = flatpickr(datetime, options);
 
 function clickBtn() {
